@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://dairedo7.github.io/video-feedback",
+  "homepage": "https://dairedo7.github.io/goit-js-08",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /video-feedback/"
+    "build": "parcel build src/*.html --public-url /goit-js-08/"
   },
   "repository": {
     "type": "git",
