@@ -5,7 +5,7 @@ const form = document.querySelector('.feedback-form');
 //Checking the existing localeStorage for form's elements data
 const savedData = localStorage.getItem(STORAGE_KEY);
 const savedDataParsed = JSON.parse(savedData);
-// console.log(savedDataParsed);
+console.log(savedDataParsed);
 
 if (savedDataParsed) {
     form['email'].value = savedDataParsed.email;
@@ -24,10 +24,14 @@ function onInput() {
 form.addEventListener('submit', onSubmit);
 //Cleaning localStorage and form fields on submit and returning object keys and values
 function onSubmit(evt) {
+    evt.preventDefault();
     const formData = { email: `${form['email'].value}`, message: `${form['message'].value}` };
     console.log(formData);
 
-    evt.preventDefault();
+    if (formData.email === '' || formData.message === '') {
+        return alert("Please, fill in all the fields!");
+    }
+
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
 }
